@@ -1,5 +1,6 @@
 import { createTodo } from "./createTodo";
 import { arrayTodo } from ".";
+import { displayTodo } from "./displayTodo";
 
 function addProject(event)
 {
@@ -8,6 +9,6 @@ function addProject(event)
     let description=prompt("description");
     let date=prompt("date");
     arrayTodo.push(createTodo(title,description,date,"hola"));
-    console.log(arrayTodo);
+    displayTodo();
 }
 export {addProject}
