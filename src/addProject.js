@@ -1,7 +1,7 @@
 import { createTodo } from "./createTodo";
 import { arrayTodo } from ".";
 
-function handleProjectButton(event)
+function addProject(event)
 {
     console.log(event.target.id);
     let title=prompt("title");
@@ -10,4 +10,4 @@ function handleProjectButton(event)
     arrayTodo.push(createTodo(title,description,date,"hola"));
     console.log(arrayTodo);
 }
-export {handleProjectButton}
+export {addProject}
