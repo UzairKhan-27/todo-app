@@ -1,14 +1,12 @@
 import { createTodo } from "./createTodo";
 import { arrayTodo } from ".";
 import { displayTodo } from "./displayTodo";
+import { showDialog } from "./handleDialog";
 
 function addProject(event)
 {
     console.log(event.target.id);
-    let title=prompt("title");
-    let description=prompt("description");
-    let date=prompt("date");
-    arrayTodo.push(createTodo(title,description,date,"hola"));
-    displayTodo();
+    showDialog();
 }
+
 export {addProject}
