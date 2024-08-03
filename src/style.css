@@ -27,7 +27,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* My CSS */
-button
+.sidebar button
 {
     border: none;
     background: none;
@@ -67,6 +67,7 @@ button
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     column-gap: 5rem;
     row-gap: 2rem;
+    justify-items: center;
     padding: 3rem;
 
 }
