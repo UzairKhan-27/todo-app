@@ -6,6 +6,19 @@
     <title>Todo</title>
 </head>
 <body>
+
+    <dialog>
+        <form>
+            <label for="title">Title</label>
+            <input type="text" id="title">
+            <label for="description">Description</label>
+            <input type="text" id="description">
+            <label for="dueDate">Due Date</label>
+            <input type="date" id="dueDate">
+            <label for="priority">Priority</label>
+            <input type="radio" id="priority">
+        </form>
+    </dialog>
     
     <div class="grid-container">
         <div class="sidebar">
@@ -14,6 +27,7 @@
                 <button id="today">Today</button>
                 <button id="upcoming">Upcoming</button>
                 <button id="someday">Someday</button>
+                <button id="completed">Completed</button>
             </div>
         
             <div class="lower">
