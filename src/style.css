@@ -60,3 +60,24 @@ button
     margin: 0 20%;
 }
 
+.main
+{
+    display: grid;
+    background-color: lightblue;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 5rem;
+    row-gap: 2rem;
+    padding: 3rem;
+
+}
+.items
+{
+    background-color: lightcoral;
+    min-width: 250px;
+    min-height: 250px;
+    width: max-content;
+    height: max-content;
+}
+
+
+
