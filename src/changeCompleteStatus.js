@@ -17,4 +17,4 @@ function getLastCharacter(string)
 {
     return string.charAt(string.length-1);
 }
-export{changeCompleteStatus}
+export{changeCompleteStatus,getLastCharacter}
