@@ -1,5 +1,7 @@
 import { arrayTodo } from "."
 import { changeCompleteStatus } from "./changeCompleteStatus";
+import { deleteTodo } from "./deleteTodo";
+
 function displayTodo()
 {
     const mainContent=document.querySelector(".main");
@@ -47,6 +49,7 @@ function displayTodo()
     })
 
     callCheckMarkEventListener();
+    callDeleteMarkEventListener();
 
 }
 
@@ -56,6 +59,15 @@ function callCheckMarkEventListener()
     items.forEach(item =>
     {
         item.addEventListener("click",changeCompleteStatus);
+    });
+}
+
+function callDeleteMarkEventListener()
+{
+    const items=document.querySelectorAll(".delete-mark");
+    items.forEach(item =>
+    {
+        item.addEventListener("click",deleteTodo);
     });
 }
 
