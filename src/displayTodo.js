@@ -15,11 +15,17 @@ function displayTodo()
         checkMark.textContent="✓";
         checkMark.setAttribute("id",`complete-${i}`);
         
+        const deleteMark=document.createElement("button");
+        deleteMark.classList.add("delete-mark");
+        deleteMark.textContent=String.fromCodePoint(0x1F5D1);
+        deleteMark.setAttribute("id",`delete-${i}`);
+
         div.classList.add("items");
         div.setAttribute("id",i);
         i++;
         
         div.appendChild(checkMark);
+        div.appendChild(deleteMark);
         mainContent.appendChild(div);
         
         for(let key in item)
