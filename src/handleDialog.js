@@ -1,5 +1,6 @@
 function showDialog()
 {
+    resetDialog();
     const dialog=document.querySelector("dialog");
     dialog.showModal();   
 }
