@@ -4,12 +4,19 @@ function displayTodo()
 {
     const mainContent=document.querySelector(".main");
     mainContent.textContent="";
+
+
     let i=0;
     arrayTodo.forEach(item => {
         const div=document.createElement("div");
+        const circleButton=document.createElement("button");
+        circleButton.classList.add("complete-mark");
+        circleButton.textContent="✓";
+        circleButton.setAttribute("id",`complete-${i}`);
         div.classList.add("items");
         div.setAttribute("id",i);
         i++;
+        div.appendChild(circleButton);
         mainContent.appendChild(div);
         for(let key in item)
         {
@@ -17,7 +24,6 @@ function displayTodo()
             {
                 if(item[key]===true)
                 {
-                    div.style.color="green";
                     div.classList.add("complete");
                 }
                 continue;
@@ -30,7 +36,7 @@ function displayTodo()
         }
     })
 
-    const items=document.querySelectorAll(".items");
+    const items=document.querySelectorAll(".complete-mark");
     items.forEach(item =>
     {
         item.addEventListener("click",changeCompleteStatus);
