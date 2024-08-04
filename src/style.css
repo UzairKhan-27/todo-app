@@ -76,14 +76,33 @@ p, h1, h2, h3, h4, h5, h6 {
     background-color: lightcoral;
     min-width: 250px;
     min-height: 250px;
-    width: max-content;
-    height: max-content;
+    max-height: 250px;
+    overflow: auto;  
 }
-
+.description
+{
+    display: flex;
+    width: 250px;
+    overflow-wrap:break-word;
+}
 .items.complete
 {
-    background-color: black;
+    background-color: lightgreen;
     text-decoration: line-through ;
+}
+dialog
+{
+    margin: auto;
+    /* height: 50vh; */
+    width: 35vw;
+}
+form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    /* align-items: center; */
 }
 
 
