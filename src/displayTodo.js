@@ -9,15 +9,19 @@ function displayTodo()
     let i=0;
     arrayTodo.forEach(item => {
         const div=document.createElement("div");
-        const circleButton=document.createElement("button");
-        circleButton.classList.add("complete-mark");
-        circleButton.textContent="✓";
-        circleButton.setAttribute("id",`complete-${i}`);
+        
+        const checkMark=document.createElement("button");
+        checkMark.classList.add("complete-mark");
+        checkMark.textContent="✓";
+        checkMark.setAttribute("id",`complete-${i}`);
+        
         div.classList.add("items");
         div.setAttribute("id",i);
         i++;
-        div.appendChild(circleButton);
+        
+        div.appendChild(checkMark);
         mainContent.appendChild(div);
+        
         for(let key in item)
         {
             if(key==="complete")
@@ -36,12 +40,17 @@ function displayTodo()
         }
     })
 
+    callCheckMarkEventListener();
+
+}
+
+function callCheckMarkEventListener()
+{
     const items=document.querySelectorAll(".complete-mark");
     items.forEach(item =>
     {
         item.addEventListener("click",changeCompleteStatus);
     });
-
 }
 
 export {displayTodo}
