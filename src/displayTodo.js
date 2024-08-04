@@ -1,6 +1,7 @@
 import { arrayTodo } from "."
 import { changeCompleteStatus } from "./changeCompleteStatus";
 import { deleteTodo } from "./deleteTodo";
+import { editTodo } from "./editTodo";
 
 function displayTodo()
 {
@@ -22,12 +23,19 @@ function displayTodo()
         deleteMark.textContent=String.fromCodePoint(0x1F5D1);
         deleteMark.setAttribute("id",`delete-${i}`);
 
+        const editMark=document.createElement("button")
+        editMark.classList.add("edit-mark");
+        editMark.textContent="edit";
+        editMark.setAttribute("id",`edit-${i}`);
+
         div.classList.add("items");
         div.setAttribute("id",i);
         i++;
         
         div.appendChild(checkMark);
+        div.appendChild(editMark);
         div.appendChild(deleteMark);
+        
         mainContent.appendChild(div);
         
         for(let key in item)
@@ -50,6 +58,7 @@ function displayTodo()
 
     callCheckMarkEventListener();
     callDeleteMarkEventListener();
+    callEditMarkEventListener();
 
 }
 
@@ -68,6 +77,15 @@ function callDeleteMarkEventListener()
     items.forEach(item =>
     {
         item.addEventListener("click",deleteTodo);
+    });
+}
+
+function callEditMarkEventListener()
+{
+    const items=document.querySelectorAll(".edit-mark");
+    items.forEach(item =>
+    {
+        item.addEventListener("click",editTodo);
     });
 }
 
