@@ -3,14 +3,15 @@ import { displayTodo } from "./displayTodo";
 
 function changeCompleteStatus(event)
 {
-    if(!event.target.id)
-        return;
 
-    console.log("here");
+    let lastChar=event.target.id;
+    lastChar=lastChar.charAt(lastChar.length-1)
+    
+    console.log(lastChar+"hola");
     console.log(event.target);
     console.log(event.target.id);
-    arrayTodo[event.target.id].complete=!(arrayTodo[event.target.id].complete);
-    console.log(arrayTodo[event.target.id].complete);
+    arrayTodo[lastChar].complete=!(arrayTodo[lastChar].complete);
+    console.log(arrayTodo[lastChar].complete);
     displayTodo();
 }
 export{changeCompleteStatus}
