@@ -3,7 +3,7 @@ import { changeCompleteStatus } from "./changeCompleteStatus";
 import { deleteTodo } from "./deleteTodo";
 import { editTodo } from "./editTodo";
 
-function displayTodo()
+function displayTodo(arrayTodo)
 {
     const mainContent=document.querySelector(".main");
     mainContent.textContent="";
@@ -73,15 +73,6 @@ function callDeleteMarkEventListener()
     items.forEach(item =>
     {
         item.addEventListener("click",deleteTodo);
-    });
-}
-
-function callEditMarkEventListener()
-{
-    const items=document.querySelectorAll(".edit-mark");
-    items.forEach(item =>
-    {
-        item.addEventListener("click",editTodo);
     });
 }
 
