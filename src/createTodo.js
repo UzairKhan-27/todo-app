@@ -1,6 +1,10 @@
-function createTodo(title,description,priority,dueDate,complete=false)
+function createTodo(title,description,priority,dueDate,project,complete=false)
 {
-    let completeStatus=false;
-    return{title,description,priority,dueDate,complete};
+    let setProject=(string)=>
+    {
+        project=string;
+    }
+    let getProject=()=>project;
+    return{title,description,priority,dueDate,complete,project};
 }
 export{createTodo};
