@@ -23,17 +23,11 @@ function displayTodo()
         deleteMark.textContent=String.fromCodePoint(0x1F5D1);
         deleteMark.setAttribute("id",`delete-${i}`);
 
-        // const editMark=document.createElement("button")
-        // editMark.classList.add("edit-mark");
-        // editMark.textContent="edit";
-        // editMark.setAttribute("id",`edit-${i}`);
-
         div.classList.add("items");
         div.setAttribute("id",i);
         i++;
         
         div.appendChild(checkMark);
-        // div.appendChild(editMark);
         div.appendChild(deleteMark);
         
         mainContent.appendChild(div);
