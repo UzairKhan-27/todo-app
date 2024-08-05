@@ -20,6 +20,11 @@
         
             <div class="lower">
                 <button id="projects">Projects</button>
+                <ul class="lists">
+                    <li id="list0">Default</li>
+                    <li id="list1">Daily</li>  
+                </ul>
+                <button id="new-project">New Project</button>
             </div>
         </div>
         <div class="main">
@@ -29,6 +34,12 @@
 
     <dialog>
         <form>
+            
+            <label for="option-project">Add To Project</label>
+            <select name="option-project" id="option-project">
+                <option>Default</option>
+                <option>Daily</option>
+            </select>
             <label for="title">Title</label>
             <input type="text" id="title" name="title" required>
             <label for="description">Description</label>
@@ -40,7 +51,6 @@
                 <option>Normal</option>
                 <option>Urgent</option>
             </select>
-            <!-- <input type="submit" id="submit"> -->
             <button type="submit" id="submit">Submit</button>
         </form>
     </dialog>
