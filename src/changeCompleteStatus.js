@@ -10,7 +10,7 @@ function changeCompleteStatus(event)
     console.log(event.target.id);
 
     arrayTodo[checkButtonID].complete=!(arrayTodo[checkButtonID].complete);
-    displayTodo();
+    displayTodo(arrayTodo);
 }
 
 function getLastCharacter(string)
