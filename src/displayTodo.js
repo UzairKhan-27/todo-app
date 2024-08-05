@@ -23,17 +23,17 @@ function displayTodo()
         deleteMark.textContent=String.fromCodePoint(0x1F5D1);
         deleteMark.setAttribute("id",`delete-${i}`);
 
-        const editMark=document.createElement("button")
-        editMark.classList.add("edit-mark");
-        editMark.textContent="edit";
-        editMark.setAttribute("id",`edit-${i}`);
+        // const editMark=document.createElement("button")
+        // editMark.classList.add("edit-mark");
+        // editMark.textContent="edit";
+        // editMark.setAttribute("id",`edit-${i}`);
 
         div.classList.add("items");
         div.setAttribute("id",i);
         i++;
         
         div.appendChild(checkMark);
-        div.appendChild(editMark);
+        // div.appendChild(editMark);
         div.appendChild(deleteMark);
         
         mainContent.appendChild(div);
@@ -50,6 +50,8 @@ function displayTodo()
             }
             const div2=document.createElement("div");
             div2.classList.add(key);
+            // div2.contentEditable=true;
+            div2.addEventListener("click",editTodo);
             div2.textContent=item[key];
             div.appendChild(div2);
 
@@ -58,7 +60,7 @@ function displayTodo()
 
     callCheckMarkEventListener();
     callDeleteMarkEventListener();
-    callEditMarkEventListener();
+    // callEditMarkEventListener();
 
 }
 
