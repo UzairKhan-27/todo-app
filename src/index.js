@@ -6,6 +6,7 @@ import { changeCompleteStatus } from './changeCompleteStatus';
 import { displayTodo } from './displayTodo';
 import { resetDialog } from './handleDialog';
 import { displayCompleteTodo } from './displayCompleteTodo';
+import { displayToday } from './displayToday';
 
 let arrayTodo=[];
 
@@ -24,5 +25,8 @@ document.querySelector('dialog').addEventListener('close', resetDialog);
 
 const completed=document.querySelector("#completed");
 completed.addEventListener("click",displayCompleteTodo)
+
+const today=document.querySelector("#today");
+today.addEventListener("click",displayToday);
 
 export {arrayTodo};
