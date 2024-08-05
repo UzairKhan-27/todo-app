@@ -7,7 +7,7 @@ function deleteTodo(event)
 {
     let deleteButtonID=getLastCharacter(event.target.id);
     arrayTodo.splice(deleteButtonID,1);
-    displayTodo();    
+    displayTodo(arrayTodo);    
 }
 
 export {deleteTodo}
