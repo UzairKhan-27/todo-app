@@ -15,6 +15,7 @@ function resetDialog()
     document.getElementById("description").value="";
     document.getElementById("dueDate").value="2011-09-29"
     document.getElementById("priority").value="Normal";
+    document.getElementById("option-project").value="Default"
 }
 
 export{showDialog,closeDialog,resetDialog}
