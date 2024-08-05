@@ -17,6 +17,6 @@ function checkUpcomingStatus(todo)
     console.log("me so "+dueDate);
     console.log(today);
     console.log(sevenDaysAhead);
-    return dueDate >= today && dueDate <= sevenDaysAhead;
+    return dueDate >= today && dueDate <= sevenDaysAhead && todo.complete===false;
 }
 export{displayUpcoming}
