@@ -1,4 +1,5 @@
-import { arrayTodo } from ".";
+import { arrayProjects, arrayTodo } from ".";
+import { lastButtonClicked } from "./addProject";
 import { createTodo } from "./createTodo";
 import { displayTodo } from "./displayTodo";
 import { closeDialog } from "./handleDialog";
@@ -23,8 +24,8 @@ function handleDialogSubmission(event)
     console.log(priority);
     closeDialog(); 
     resetDialog();
-
-    arrayTodo.push(createTodo(title,description,priority,dueDate));
+    console.log("me button "+lastButtonClicked);
+    arrayTodo.push(createTodo(title,description,priority,dueDate,arrayProjects[lastButtonClicked] ));
     displayTodo(arrayTodo);
 }
 
