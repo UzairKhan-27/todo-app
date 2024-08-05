@@ -34,7 +34,7 @@ function displayTodo(arrayTodo)
         
         for(let key in item)
         {
-            if(key==="complete")
+            if(key==="complete" || key==="project")
             {
                 if(item[key]===true)
                 {
