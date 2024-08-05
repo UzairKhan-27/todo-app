@@ -13,7 +13,7 @@ function checkDueDateStatus(todo)
     let currentDate=getTodayDate();
     console.log(currentDate);
 
-    return todo.dueDate===currentDate;
+    return todo.dueDate===currentDate && todo.complete===false;
 }
 function getTodayDate()
 {
