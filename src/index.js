@@ -7,9 +7,11 @@ import { displayTodo } from './displayTodo';
 import { resetDialog } from './handleDialog';
 import { displayCompleteTodo } from './displayCompleteTodo';
 import { displayToday } from './displayToday';
+import { displayUpcoming } from './displayUpcoming';
+import { displayMissed } from './displayMissed';
 
 let arrayTodo=[];
-
+let arrayProjects=["default"];
 const projectButton=document.querySelector("#projects");
 projectButton.addEventListener("click",addProject);
 
@@ -29,4 +31,9 @@ completed.addEventListener("click",displayCompleteTodo)
 const today=document.querySelector("#today");
 today.addEventListener("click",displayToday);
 
-export {arrayTodo};
+const upcoming=document.querySelector("#upcoming");
+upcoming.addEventListener("click",displayUpcoming);
+
+const missed=document.querySelector("#missed");
+missed.addEventListener("click",displayMissed);
+export {arrayTodo,arrayProjects};
