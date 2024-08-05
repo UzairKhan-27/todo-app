@@ -7,13 +7,25 @@ import { displayTodo } from './displayTodo';
 import { resetDialog } from './handleDialog';
 import { displayCompleteTodo } from './displayCompleteTodo';
 import { displayToday } from './displayToday';
-import { displayUpcoming } from './displayUpcoming';
+import { displayUpcoming } from './displayUpcoming.js';
 import { displayMissed } from './displayMissed';
+import { updateProjectDropdown } from './updateProjectDropdown.js';
+import { createNewProject } from './createNewProject.js';
+import { displayProject } from './displayProject.js';
+
 
 let arrayTodo=[];
-let arrayProjects=["default"];
-const projectButton=document.querySelector("#projects");
-projectButton.addEventListener("click",addProject);
+let arrayProjects=["Default","Daily"];
+
+const projectList=document.querySelector(".lists");
+console.log(projectList);
+projectList.addEventListener("click",displayProject);
+
+const newTask=document.querySelector("#new-task");
+newTask.addEventListener("click",addProject);
+
+const newProject=document.querySelector("#new-project");
+newProject.addEventListener("click",createNewProject);
 
 const submitButton=document.querySelector("#submit");
 submitButton.addEventListener("click",handleDialogSubmission);
@@ -22,8 +34,6 @@ const inbox=document.querySelector("#inbox");
 inbox.addEventListener("click", ()=>displayTodo(arrayTodo));
 
 document.querySelector('dialog').addEventListener('close', resetDialog);
-// const main=document.querySelector(".main");
-// main.addEventListener("click",changeCompleteStatus);
 
 const completed=document.querySelector("#completed");
 completed.addEventListener("click",displayCompleteTodo)
