@@ -25,7 +25,7 @@ function handleDialogSubmission(event)
     resetDialog();
 
     arrayTodo.push(createTodo(title,description,priority,dueDate));
-    displayTodo();
+    displayTodo(arrayTodo);
 }
 
 export{handleDialogSubmission}
