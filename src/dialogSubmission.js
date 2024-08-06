@@ -19,7 +19,7 @@ function handleDialogSubmission(event)
         alert("Fill the title and Due Date");
         return;
     }
-    description=(description==="") ? "NO DESCRIPTION": document.getElementById("description").value
+    description=(description.trim()==="") ? "NO DESCRIPTION": document.getElementById("description").value
     console.log(title);
     console.log(description);
     console.log(dueDate);

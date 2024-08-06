@@ -3,7 +3,9 @@ import { updateProjectDropdown } from "./updateProjectDropdown";
 
 function createNewProject(event)
 {
-    let user=prompt("val");
+    let user=prompt("Enter New Project Name");
+    if (user.trim()===""||user===null)
+        return;
     arrayProjects.push(user);
     const li=document.createElement("li");
     const list= document.querySelector(".lists")
