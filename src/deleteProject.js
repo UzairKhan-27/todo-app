@@ -1,5 +1,6 @@
-import { arrayProjects, arrayTodo, updateArrayTodo } from ".";
+import { arrayProjects, arrayTodo, updateArrayTodo,updateArrayProjects } from ".";
 import { displayTodo } from "./displayTodo";
+
 let string="";
 function deleteProject(event)
 {
@@ -46,16 +47,26 @@ function submitDeleteProject(event)
     const form=document.querySelector("#delete-project-form");
     const options=form.querySelectorAll("input");
     let newArrayTodo;
+    let newProjectList;
     options.forEach((option)=>{
         console.log(option.id+option.checked);
         string=option.id;
         if(option.checked===true)
+        {
             newArrayTodo=arrayTodo.filter(removeSelectedProjectTasks);
+            newProjectList=arrayProjects.filter(removeProjectList);
+        }
     })
     dialog.close();
     updateArrayTodo(newArrayTodo);
+    updateArrayProjects(newProjectList);
+    console.log(arrayProjects+"sweet");
     console.log(event.target.id);
     displayTodo(arrayTodo);
+}
+function removeProjectList(list)
+{
+    return string !==list;
 }
 function removeSelectedProjectTasks(todo)
 {
