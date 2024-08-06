@@ -8,24 +8,23 @@ function displayTodo(arrayTodo)
     const mainContent=document.querySelector(".main");
     mainContent.textContent="";
 
-
-    let i=0;
+    // let i=0;
     arrayTodo.forEach(item => {
         const div=document.createElement("div");
         
         const checkMark=document.createElement("button");
         checkMark.classList.add("complete-mark");
         checkMark.textContent="✓";
-        checkMark.setAttribute("id",`complete-${i}`);
+        checkMark.setAttribute("id",`complete-${item.id}`);
         
         const deleteMark=document.createElement("button");
         deleteMark.classList.add("delete-mark");
         deleteMark.textContent=String.fromCodePoint(0x1F5D1);
-        deleteMark.setAttribute("id",`delete-${i}`);
+        deleteMark.setAttribute("id",`delete-${item.id}`);
 
         div.classList.add("items");
-        div.setAttribute("id",i);
-        i++;
+        div.setAttribute("id",item.id);
+        // i++;
         
         div.appendChild(checkMark);
         div.appendChild(deleteMark);
@@ -34,7 +33,7 @@ function displayTodo(arrayTodo)
         
         for(let key in item)
         {
-            if(key==="complete" || key==="project")
+            if(key==="complete" )
             {
                 if(item[key]===true)
                 {

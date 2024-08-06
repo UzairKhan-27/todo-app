@@ -28,7 +28,8 @@ function handleDialogSubmission(event)
     closeDialog(); 
     resetDialog();
     console.log("me button "+lastButtonClicked);
-    arrayTodo.push(createTodo(title,description,priority,dueDate,project ));
+    arrayTodo.push(createTodo(title,description,priority,dueDate,project,arrayTodo.length ));
+    console.log(arrayTodo)
     displayTodo(arrayTodo);
 }
 
