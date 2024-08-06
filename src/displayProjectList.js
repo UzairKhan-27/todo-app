@@ -7,7 +7,7 @@ function displayProjectList()
     for(let i=0;i<arrayProjects.length;i++){
     const li=document.createElement("li");
     
-    li.setAttribute("id",`list${arrayProjects.length-1}`)
+    li.setAttribute("id",`list${i}`)
     li.textContent=arrayProjects[i];
     list.appendChild(li);
     console.log(arrayProjects);

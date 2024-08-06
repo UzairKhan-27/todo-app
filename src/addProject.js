@@ -1,13 +1,9 @@
-import { createTodo } from "./createTodo";
-import { arrayTodo } from ".";
-import { displayTodo } from "./displayTodo";
 import { showDialog } from "./handleDialog";
 import { getLastCharacter } from "./changeCompleteStatus";
 let lastButtonClicked=null;
 function addProject(event)
 {
     lastButtonClicked=getLastCharacter(event.target.id) ;
-    console.log(event.target.id);
     showDialog();
 }
 

@@ -29,18 +29,14 @@ function deleteProject(event)
         form.appendChild(input);
         form.appendChild(label);
         form.appendChild(lineBreak);
-        console.log(item);
-        console.log(input.checked);
     })
     form.appendChild(deleteButton);
-    // const submitDeleteProjectButton=document.querySelector("#submit-delete-project");
     deleteButton.addEventListener("click",submitDeleteProject);
 
     dialog.showModal();
 }
 function submitDeleteProject(event)
 {
-    // console.log(event.target.id);    
     event.preventDefault();
 
     const dialog=document.querySelector("#delete-project-dialog");

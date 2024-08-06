@@ -1,8 +1,6 @@
 import './style.css';
-import {createTodo} from './createTodo' ;
 import { addProject } from './addProject';
 import { handleDialogSubmission } from './dialogSubmission';
-import { changeCompleteStatus } from './changeCompleteStatus';
 import { displayTodo } from './displayTodo';
 import { resetDialog } from './handleDialog';
 import { displayCompleteTodo } from './displayCompleteTodo';
@@ -12,10 +10,35 @@ import { displayMissed } from './displayMissed';
 import { updateProjectDropdown } from './updateProjectDropdown.js';
 import { createNewProject } from './createNewProject.js';
 import { displayProject } from './displayProject.js';
-
+import { deleteProject } from './deleteProject.js';
+import { displayProjectList } from './displayProjectList.js';
 
 let arrayTodo=[];
-let arrayProjects=["Default","Daily"];
+let arrayProjects=["Default"];
+updateProjectDropdown();
+function updateArrayTodo(newArray) {
+    arrayTodo = newArray;
+}
+function updateArrayProjects(newArray) {
+    arrayProjects = newArray;
+    // updateProjectDropdown();
+    displayProjectList();
+}
+function updateArrayTodoID()
+{
+    let i=0;
+    arrayTodo.forEach(item=>{
+
+        item.id=i;
+        i++;
+    })
+}
+
+displayProjectList();
+
+
+
+
 
 const projectList=document.querySelector(".lists");
 console.log(projectList);
@@ -46,4 +69,10 @@ upcoming.addEventListener("click",displayUpcoming);
 
 const missed=document.querySelector("#missed");
 missed.addEventListener("click",displayMissed);
-export {arrayTodo,arrayProjects};
+
+const deleteProjectButton=document.querySelector("#delete-project");
+deleteProjectButton.addEventListener("click",deleteProject);
+
+export {arrayTodo,arrayProjects,updateArrayTodo,updateArrayTodoID,updateArrayProjects};
+
+

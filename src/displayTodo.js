@@ -4,9 +4,11 @@ import { deleteTodo } from "./deleteTodo";
 import { editTodo } from "./editTodo";
 
 function displayTodo(arrayTodo)
-{
+{        
     const mainContent=document.querySelector(".main");
     mainContent.textContent="";
+    if(arrayTodo.length===0)
+        mainContent.textContent="There's Nothing Here!";
 
     // let i=0;
     arrayTodo.forEach(item => {
@@ -33,13 +35,17 @@ function displayTodo(arrayTodo)
         
         for(let key in item)
         {
-            if(key==="complete" )
+            if(key==="complete" || key==="project" || key==="id" )
             {
                 if(item[key]===true)
                 {
                     div.classList.add("complete");
                 }
                 continue;
+            }
+            if(key==="priority" && item[key]==="Urgent" && item.complete===false)
+            {
+                div.style.backgroundColor="pink";
             }
             const div2=document.createElement("div");
             div2.classList.add(key);
