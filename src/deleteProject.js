@@ -1,4 +1,4 @@
-import { arrayProjects, arrayTodo, updateArrayTodo,updateArrayProjects } from ".";
+import { arrayProjects, arrayTodo, updateArrayTodo,updateArrayProjects,saveToStorage } from ".";
 import { displayTodo } from "./displayTodo";
 
 let string="";
@@ -58,6 +58,7 @@ function submitDeleteProject(event)
     updateArrayProjects(newProjectList);
     console.log(arrayProjects+"sweet");
     console.log(event.target.id);
+    saveToStorage();
     displayTodo(arrayTodo);
 }
 function removeProjectList(list)

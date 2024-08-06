@@ -2,6 +2,7 @@ import { arrayTodo } from "."
 import { changeCompleteStatus } from "./changeCompleteStatus";
 import { deleteTodo } from "./deleteTodo";
 import { editTodo } from "./editTodo";
+import { saveToStorage } from ".";
 
 function displayTodo(arrayTodo)
 {        
@@ -56,7 +57,7 @@ function displayTodo(arrayTodo)
 
         }
     })
-
+    saveToStorage();
     callCheckMarkEventListener();
     callDeleteMarkEventListener();
     // callEditMarkEventListener();

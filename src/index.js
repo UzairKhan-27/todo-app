@@ -33,7 +33,22 @@ function updateArrayTodoID()
         i++;
     })
 }
+function loadFromStorage()
+{
+    arrayTodo = JSON.parse(localStorage.getItem('arrayTodo')) || [];
+    arrayProjects = JSON.parse(localStorage.getItem('arrayProjects')) || []
+}
 
+function saveToStorage()
+{
+    // Save the updated array back to localStorage
+    localStorage.setItem('arrayTodo', JSON.stringify(arrayTodo));
+    localStorage.setItem('arrayProjects', JSON.stringify(arrayProjects));
+}
+export{saveToStorage,loadFromStorage};
+// saveToStorage();
+loadFromStorage();
+displayTodo(arrayTodo);
 displayProjectList();
 
 
